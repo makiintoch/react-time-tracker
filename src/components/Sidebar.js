@@ -4,7 +4,9 @@ import './Sidebar.css';
 const Sidebar = props => {
     return (
         <div className={'sidebar'}>
-            sidebar
+            <ul>
+                <li></li>
+            </ul>
         </div>
     );
 }
