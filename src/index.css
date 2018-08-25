@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Verdana', sans-serif;
+    background-color: #eff4f7;
+}
+div, header, section, main, footer, p, a {
+    box-sizing: border-box;
+}

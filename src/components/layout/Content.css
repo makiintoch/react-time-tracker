@@ -1,0 +1,4 @@
+.content {
+    width: calc(100% - 315px);
+    margin: 30px 315px;
+}

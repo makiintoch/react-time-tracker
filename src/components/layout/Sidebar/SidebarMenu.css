@@ -1,0 +1,32 @@
+.sidebar__menu {
+    width: 100%;
+    margin: 25px 0;
+    padding: 0;
+}
+.sidebar__menu-link {
+    height: 44px;
+    padding: 0 30px;
+    display: block;
+    position: relative;
+    font-size: 14px;
+    line-height: 44px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #333;
+}
+.sidebar__menu-link:before {
+    content: '';
+    width: 0;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-color: #e4eaee;
+    transition: width .25s ease;
+}
+.sidebar__menu-link:hover:before,
+.sidebar__menu-link_active::before {
+    width: 100%;
+}
