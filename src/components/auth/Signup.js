@@ -1,30 +1,24 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import {reduxForm, Field} from 'redux-form'
 import ErrorField from './ErrorField'
 import validate from './validate'
 
-class SignupForm extends Component {
-    handleSubmit = event => {
-        event.preventDefault()
-    }
+const SignupForm = props => {
+    return (
+        <div className={'form__block'}>
+            <h1>Sign up</h1>
 
-    render() {
-        return (
-            <div>
-                <h1>Sign up</h1>
+            <form className={'form'} onSubmit={props.handleSubmit} noValidate={true}>
+                <Field name={'email'} component={ErrorField} type={'email'} />
+                <Field name={'password'} component={ErrorField} type={'password'} />
 
-                <form className={'form'} onSubmit={this.handleSubmit} noValidate={true}>
-                    <Field name={'email'} component={ErrorField} type={'email'} />
-                    <Field name={'password'} component={ErrorField} type={'password'} />
+                <button type={'submit'}>Submit</button>
 
-                    <button type={'submit'}>Submit</button>
-
-                    <p><Link to={'/login'}>Sign In</Link> if you have an account.</p>
-                </form>
-            </div>
-        )
-    }
+                <p><Link to={'/login'}>Sign In</Link> if you have an account.</p>
+            </form>
+        </div>
+    )
 }
 
 export default reduxForm({
