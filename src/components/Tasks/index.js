@@ -7,11 +7,11 @@ const mapStateToProps = state => ({tasks: state.reducerTasks.tasks})
 const ConnectedTasks = ({tasks}) => {
     return (
         <div className={'tasks'}>
-            <h1 className={'tasks__title'}>Список задач</h1>
+            <h1 className={'tasks__title'}>Tasks list</h1>
             {
                 tasks.length
                     ? tasks.map(item => <div className={'task'} key={item.id}>{item.name}</div>)
-                    : <p>Пока нет добавленных задач</p>
+                    : <p>No tasks added yet</p>
 
             }
         </div>

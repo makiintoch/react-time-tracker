@@ -1,12 +1,13 @@
-import React from 'react';
-import './SidebarLogo.css';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import './SidebarLogo.css'
 
 const SidebarLogo = () => {
     return (
         <div className={'sidebar__logo'}>
-            Logotype
+            <Link to={'/tasks'}>Logotype</Link>
         </div>
-    );
+    )
 }
 
-export default SidebarLogo;
+export default SidebarLogo

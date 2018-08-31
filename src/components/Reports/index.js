@@ -4,7 +4,7 @@ import './index.css'
 const Report = props => {
     return (
         <div className={'reports'}>
-            Reports
+            <h1>Summary report</h1>
         </div>
     )
 }
