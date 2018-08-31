@@ -1,18 +1,18 @@
-import React from 'react';
+import React from 'react'
 import { Switch, Route } from 'react-router-dom';
-import './Content.css';
-import TimeTracker from '../TimeTracker/TimeTracker';
-import Reports from '../Reports/Reports';
+import Tasks from '../Tasks'
+import Reports from '../Reports'
+import './Content.css'
 
 const Content = props => {
     return (
         <div className={'content'}>
             <Switch>
-                <Route exact path={'/tracker'} component={TimeTracker}/>
+                <Route exact path={'/tasks'} component={Tasks}/>
                 <Route path={'/reports'} component={Reports}/>
             </Switch>
         </div>
-    );
+    )
 }
 
-export default Content;
+export default Content

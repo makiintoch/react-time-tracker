@@ -1,13 +1,13 @@
 import React from 'react';
 import SidebarMenu from './SidebarMenu';
 import SidebarLogo from './SidebarLogo';
-import './Sidebar.css';
+import './index.css';
 
 const Sidebar = props => {
     return (
         <div className={'sidebar'}>
-            <SidebarLogo/>
-            <SidebarMenu/>
+            <SidebarLogo />
+            <SidebarMenu />
         </div>
     );
 }
