@@ -2,8 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 import './index.css'
 
-const mapStateToProps = state => ({tasks: state.reducerTasks.tasks})
-
 const ConnectedTasks = ({tasks}) => {
     return (
         <div className={'tasks'}>
@@ -18,6 +16,6 @@ const ConnectedTasks = ({tasks}) => {
     )
 }
 
-const Tasks = connect(mapStateToProps)(ConnectedTasks)
+const Tasks = connect(state => state)(ConnectedTasks)
 
 export default Tasks

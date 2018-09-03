@@ -22,7 +22,6 @@ export default function (state = new ReducerRecord(), action) {
             return state
                 .set('loading', false)
                 .set('user', payload.user)
-                .set('error', null)
         case SIGN_UP_ERROR:
             return state
                 .set('loading', false)

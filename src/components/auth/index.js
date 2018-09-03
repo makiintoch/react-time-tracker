@@ -16,6 +16,7 @@ class Auth extends Component {
 
     render() {
         const {loading} = this.props
+        console.log(this.props)
         return (
             <div className={'auth'}>
                 <Route path={'/login'} render={() => <SigninForm onSubmit={this.handleSignin} />} />
