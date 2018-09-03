@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {Route} from 'react-router-dom'
-import SigninForm from '../auth/Signin'
-import SignupForm from '../auth/Signup'
+import SigninForm from './Signin'
+import SignupForm from './Signup'
+import Loader from '../common/Loader'
 import {connect} from 'react-redux'
 import {signUp, moduleName} from "../../ducks/auth"
 
@@ -16,9 +17,10 @@ class Auth extends Component {
 
     render() {
         const {loading} = this.props
-        console.log(this.props)
         return (
             <div className={'auth'}>
+                {loading && <Loader />}
+
                 <Route path={'/login'} render={() => <SigninForm onSubmit={this.handleSignin} />} />
                 <Route path={'/signup'} render={() => <SignupForm onSubmit={this.handleSignup} />} />
             </div>

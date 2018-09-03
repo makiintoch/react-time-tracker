@@ -1,8 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {reduxForm, Field} from 'redux-form'
-import ErrorField from './ErrorField'
-import validate from './validate'
+import ErrorField from '../common/ErrorField'
+import validate from '../common/validate'
 
 const SigninForm = props => {
     return (
