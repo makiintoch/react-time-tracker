@@ -4,12 +4,14 @@ import {reduxForm, Field} from 'redux-form'
 import ErrorField from '../common/ErrorField'
 import validate from '../common/validate'
 
-const SigninForm = props => {
+const SigninForm = ({signInUser, signInError, handleSubmit}) => {
     return (
         <div className={'form__block'}>
             <h1>Sign in</h1>
 
-            <form className={'form'} onSubmit={props.handleSubmit} noValidate={true}>
+            {signInError && <p className={'error'}>{signInError.message}</p> }
+
+            <form className={'form'} onSubmit={handleSubmit} noValidate={true}>
                 <Field name={'email'} component={ErrorField} type={'email'} />
                 <Field name={'password'} component={ErrorField} type={'password'} />
 

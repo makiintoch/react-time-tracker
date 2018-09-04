@@ -4,11 +4,11 @@ import SigninForm from './Signin'
 import SignupForm from './Signup'
 import Loader from '../common/Loader'
 import {connect} from 'react-redux'
-import {signUp, moduleName} from "../../ducks/auth"
+import {signUp, signIn, moduleName} from "../../ducks/auth"
 
 class Auth extends Component {
     handleSignin = ({email, password}) => {
-        console.log('sign in from components')
+        this.props.signIn(email, password)
     }
 
     handleSignup = ({email, password}) => {
@@ -16,18 +16,20 @@ class Auth extends Component {
     }
 
     render() {
-        const {loading} = this.props
+        const {loading, user, error} = this.props
         return (
             <div className={'auth'}>
                 {loading && <Loader />}
 
-                <Route path={'/login'} render={() => <SigninForm onSubmit={this.handleSignin} />} />
-                <Route path={'/signup'} render={() => <SignupForm onSubmit={this.handleSignup} />} />
+                <Route path={'/login'} render={() => <SigninForm signInUser={user} signInError={error} onSubmit={this.handleSignin} />} />
+                <Route path={'/signup'} render={() => <SignupForm signUpError={error} onSubmit={this.handleSignup} />} />
             </div>
         )
     }
 }
 
 export default connect(state => ({
-    loading: state[moduleName].loading
-}), {signUp})(Auth)
+    loading: state[moduleName].loading,
+    user: state[moduleName].user,
+    error: state[moduleName].error
+}), {signUp, signIn})(Auth)
